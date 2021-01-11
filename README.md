@@ -6,6 +6,7 @@
 We will be working on a server/client system which allows multiple clients to connect and chat with one another. The chat-room will support additional features, including username/password logins (I'm not sure if we're doing this but thought I'd add it for now b/c it seems like a good idea - sasha), a stored record of chat sessions between users, and simple multiplayer games (tic tac toe & hangman could be good options - sasha) which store a record of high-scores.
 
 ### User Interface Description:
+To connect to the chat, a client process can be ran which will prompt the user to enter an existing login or create a new one. After that, the user can communicate in the chat via the command line, where other messages will also be printed. Commands will be created which enable the user to find old chat sessions or interact with a game.
 
 ### Technical Design:
 - #### Use of topics covered in class
