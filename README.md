@@ -17,5 +17,13 @@ We will be working on a server/client system which allows multiple clients to co
   - Signals (ctrl-c) from users will be processed in order to close chatlogs and remove unfinished games
   - Memory allocation will be used when creating structs that hold username/password information
 - #### Breakdown of work
+  - May Hathaway: 
+  - Lei Lin: 
+  - Sasha Wald: 
 - #### Use of data structures and/or algorithms
 - #### Timeline
+  - 1/14: 
+  - 1/17: 
+  - 1/20: 
+  - 1/23: 
+  - (Insert due date here): Project complete
