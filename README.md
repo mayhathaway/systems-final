@@ -19,7 +19,7 @@ To connect to the chat, a client process can be ran which will prompt the user t
 - #### Breakdown of work
   - May Hathaway: 
   - Lei Lin: 
-  - Sasha Wald: 
+  - Sasha Wald: Creation of chat functionality + username & password system
 - #### Use of data structures and/or algorithms
 - #### Timeline
   - 1/14: Completion of basic system which allows clients to chat with each other
