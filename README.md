@@ -3,7 +3,7 @@
 
 
 #### Project Description: (DRAFT)
-We will be working on a server/client system which allows multiple clients to connect and chat with one another. The chat-room will support additional features, including username/password logins (i'm not sure if we're doing this but thought i'd add it for now b/c it seems like a good idea - sasha), a stored record of chat sessions between users, and multiplayer games which store a record of high-score results.
+We will be working on a server/client system which allows multiple clients to connect and chat with one another. The chat-room will support additional features, including username/password logins (i'm not sure if we're doing this but thought i'd add it for now b/c it seems like a good idea - sasha), a stored record of chat sessions between users, and simple multiplayer games which store a record of high-scores.
 
 #### User Interface Description: 
 
