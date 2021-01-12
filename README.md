@@ -12,7 +12,7 @@ To connect to the chat, a client process can be ran which will prompt the user t
 - #### Use of topics covered in class
   - Named pipes will be used to send information between chatters and the server
   - Use pipes to create private messages
-  - We will work with files in order to create chat records and sore high scores, and potentially to track game progress
+  - We will work with files in order to create chat records and store high scores, and potentially to track game progress
   - Games can be run on a child process
   - Signals (ctrl-c) from users will be processed in order to close chatlogs and remove unfinished games
   - Memory allocation will be used when creating structs that hold username/password information
@@ -20,7 +20,6 @@ To connect to the chat, a client process can be ran which will prompt the user t
   - May Hathaway: 
   - Lei Lin: 
   - Sasha Wald: Creation of chat functionality + username & password system
-- #### Use of data structures and/or algorithms
 - #### Timeline
   - 1/14: Completion of basic system which allows clients to chat with each other
   - 1/17: Completion of username and password system as well as chat logs
