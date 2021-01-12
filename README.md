@@ -17,7 +17,7 @@ To connect to the chat, a client process can be ran which will prompt the user t
   - Signals (ctrl-c) from users will be processed in order to close chatlogs and remove unfinished games
   - Memory allocation will be used when creating structs that hold username/password information
 - #### Breakdown of work
-  - May Hathaway:
+  - May Hathaway: User signal handling, chatlogs
   - Lei Lin: Games, private messaging
   - Sasha Wald: Creation of chat functionality + username & password system
 - #### Timeline
