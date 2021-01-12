@@ -2,8 +2,8 @@
 #### by May Hathaway, Sasha Wald, and Lei Lin
 
 
-### Project Description: 
-We will be working on a server/client system which allows multiple clients to connect and chat with one another. The chat-room will support additional features, including username/password logins , a stored record of chat sessions between users, and simple multiplayer games (namely, tic tac toe & hagman) which store a record of high-scores.
+### Project Description:
+We will be working on a server/client system which allows multiple clients to connect and chat with one another. The chat-room will support additional features, including username/password logins , a stored record of chat sessions between users, and simple multiplayer games (namely, tic tac toe & hangman) which store a record of high-scores.
 
 ### User Interface Description:
 To connect to the chat, a client process can be ran which will prompt the user to enter an existing login or create a new one. After that, the user can communicate in the chat via the command line, where other messages will also be printed. Commands will be created which enable the user to find old chat sessions or interact with a game.
@@ -17,8 +17,8 @@ To connect to the chat, a client process can be ran which will prompt the user t
   - Signals (ctrl-c) from users will be processed in order to close chatlogs and remove unfinished games
   - Memory allocation will be used when creating structs that hold username/password information
 - #### Breakdown of work
-  - May Hathaway: 
-  - Lei Lin: 
+  - May Hathaway:
+  - Lei Lin: Games, private messaging
   - Sasha Wald: Creation of chat functionality + username & password system
 - #### Timeline
   - 1/14: Completion of basic system which allows clients to chat with each other
