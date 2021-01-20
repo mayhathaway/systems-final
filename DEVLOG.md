@@ -17,4 +17,5 @@
 - Username/Password bug fixes: Added protection against nonexistent usernames, added chat exiting when incorrect password is entered.
 - Should add protection against duplicate usernames + encryption for the namepass.txt file in the future, but it's probably okay if we don't get to it
 - Fixed a bug where the server prints one empty message when a client joins. 
+- Found a bug where newly created logins provide a weird format on the first usage. Temporarily fixed by forcing relog when a new login is created.
 - Contributor(s): Sasha Wald
