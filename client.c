@@ -74,11 +74,11 @@ int main(){
     close(fd1);
     char textbuffer[256];
     mkfifo(finaluser,0644);
-    fgets(textbuffer,256,stdin);
     while(1){
 
         //message is contained in textbuffer
-        fgets(textbuffer,256,stdin);
+        printf("%s: ",finaluser);
+        scanf("%s",textbuffer);
         char finmessg[256];
         char colon[12]=": ";
         strcpy(finmessg,finaluser);
