@@ -21,8 +21,8 @@ To connect to the chat, a client process can be ran which will prompt the user t
   - Lei Lin: Games, private messaging
   - Sasha Wald: Creation of chat functionality + username & password system
 - #### Timeline
+  - 1/19: Completion of username and password system as well as chat logs
   - 1/14: Completion of basic system which allows clients to chat with each other
-  - 1/17: Completion of username and password system as well as chat logs
-  - 1/20: Completion of games + high-score/game progress record
-  - 1/23: Misc: Bug fixing, handling user quits & private messages
+  - 1/24: Completion of games + high-score/game progress record
+  - 1/27: Misc: Bug fixing, handling user quits & private messages
   - (Insert due date here): Project complete
