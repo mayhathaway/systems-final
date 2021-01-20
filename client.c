@@ -31,7 +31,8 @@ int main(){
         write(fd,password,strlen(password));
         close(fd);
         strcpy(finaluser,username);
-        printf("A new login has been created! You may now type to the chat.\n");
+        printf("A new login has been created! Please restart to chat.\n");
+        exit(0);
     }
     //user indicated they already have a login
     else if(strcmp(buffer,"y")==0){
@@ -73,6 +74,7 @@ int main(){
     write(fd1,finaluser,sizeof(finaluser));
     close(fd1);
     char textbuffer[256];
+    //remove trailing newline for newly created login
     mkfifo(finaluser,0644);
     while(1){
 
