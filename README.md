@@ -42,7 +42,7 @@ In one terminal, run the command './server.o'
 In another terminal, run the command './client.o'
 - This will allow you to create a new user or log in to the chat with an existing user. If you would like another user to log in simultaneously, open a new terminal and run the command './client.o' again.
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
-- Avoid creating users which have the same name as a folder in the same directory as the client.o program.
+- Avoid creating users which have the same name as a folder in the same directory as the client.o program (if you have a folder named 'test', do not create a user named 'Test', for example)
 
 When you're finished using a client, type <COMMAND GOES HERE> to exit. The chat server will continue to run.
 If you'd like to shut down this instance of the chat entirely, type <COMAND GOES HERE>. This will exit the server and all attached clients.
