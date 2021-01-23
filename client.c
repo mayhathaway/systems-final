@@ -9,10 +9,10 @@
 int main(){
     //NOTE: planning to add duplicate username prevention and some simple encryption to the username/password file if there's time. - sasha (if we don't get to it... it would be a good future addition so let that be noted!)
 
-    //0) ask if user has name. if no, create name/password and add to file. if yes, proceed. if name is in login info file and password is correct, log in. 
+    //0) ask if user has name. if no, create name/password and add to file. if yes, proceed. if name is in login info file and password is correct, log in.
     char buffer[256];
     char finaluser[256];
-    
+
     //asking for existing login
     printf("Do you have an existing login? [y/n]: ");
     fgets(buffer,2,stdin);
@@ -48,7 +48,7 @@ int main(){
             exit(0);
         }
         //acquiring password from file
-        char temppass[3];
+        char temppass[5];
         for(int i = 2; i < 6; i++){
            temppass[i-2]=(strstr(tempbuff,username)+namelen)[i];
         }
@@ -56,6 +56,8 @@ int main(){
         printf("Enter the FOUR-NUMBER password associated with your username: ");
         char enteredpass[5];
         scanf("%s",enteredpass);
+        printf("ENTERED: %s\n", enteredpass);
+        printf("TEMP: %s\n", temppass );
         if(strcmp(enteredpass,temppass)==0){
             printf("Correct password entered! You may now type to the chat.\n");
         }
@@ -69,7 +71,7 @@ int main(){
         printf("please pick yes or no.\n");
         exit(0);
     }
-    //1) send client username to server pipe - then create pipe with username!  
+    //1) send client username to server pipe - then create pipe with username!
     int fd1 = open("u_names",O_WRONLY);
     write(fd1,finaluser,sizeof(finaluser));
     close(fd1);
@@ -87,7 +89,7 @@ int main(){
         strcat(finmessg,colon);
         strcat(finmessg,textbuffer);
         //strcat(finmessg,textbuffer);
-    
+
         int fd2 = open(finaluser,O_WRONLY);
         write(fd2,finmessg,sizeof(finmessg));
         close(fd2);
