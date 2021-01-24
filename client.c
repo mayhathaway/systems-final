@@ -18,6 +18,8 @@ static void signal_handler(int sign){
 }
 
 int main(){
+
+    signal(SIGINT, signal_handler);
     //NOTE: planning to add duplicate username prevention and some simple encryption to the username/password file if there's time. - sasha (if we don't get to it... it would be a good future addition so let that be noted!)
 
     //0) ask if user has name. if no, create name/password and add to file. if yes, proceed. if name is in login info file and password is correct, log in.
