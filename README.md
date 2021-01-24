@@ -25,7 +25,7 @@ To connect to the chat, a client process can be ran which will prompt the user t
 #### by May Hathaway, Sasha Wald, and Lei Lin (Period 10)
 
 ### A Short Description of Our Project
-
+We've created a server/client system which allows multiple clients to connect and chat with one another. The chat-room supports some additional features, including reusable username/password logins, signal handling of user exits, a stored record of chat sessions between users, and simple games (namely, tic tac toe) run via a shell program.
 ### How-to
 To use this chat server, you will need to open multiple terminals. You should start with two!
 Type the command 'make' in each terminal.
@@ -36,7 +36,7 @@ In one terminal, run the command './server.o'
 In another terminal, run the command './client.o'
 - This will allow you to create a new user or log in to the chat with an existing user. If you would like another user to log in simultaneously, open a new terminal and run the command './client.o' again.
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
-- Avoid creating users which have the same name as a folder in the same directory as the client.o program (if you have a folder named 'test', do not create a user named 'Test', for example)
+- To exit a specific user, you can type the command 'exit', or use 'ctrl-C'
 - To start a tictactoe game type "ttt start" in a client
 - To end the game type "ttt end" in a client
 
