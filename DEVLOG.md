@@ -30,3 +30,9 @@
 ### Saturday 1/23/21
 - Added tic tac toe through game.c
 - Continued trying to add private messaging but was still unsuccessful
+- Contributor(s): Lei Lin
+
+### Sunday 1/24/21
+- Added signal handling for user exits and exit messages to server.o
+- Found bug where tic tac toe prevents chatting after the game is finished - not sure how to fix this since exec only returns when a program breaks..?
+- Contributor(s): Sasha Wald
