@@ -56,8 +56,6 @@ int main(){
         printf("Enter the FOUR-NUMBER password associated with your username: ");
         char enteredpass[5];
         scanf("%s",enteredpass);
-        printf("ENTERED: %s\n", enteredpass);
-        printf("TEMP: %s\n", temppass );
         if(strcmp(enteredpass,temppass)==0){
             printf("Correct password entered! You may now type to the chat.\n");
         }
@@ -75,25 +73,51 @@ int main(){
     int fd1 = open("u_names",O_WRONLY);
     write(fd1,finaluser,sizeof(finaluser));
     close(fd1);
+
+    int temppipe = open("numtemp", O_RDONLY);
+    char num[8];
+    read(temppipe, num, sizeof(num));
+    close(temppipe);
+
     char textbuffer[256];
-    //remove trailing newline for newly created login
-    mkfifo(finaluser,0644);
-    while(1){
+    char cts[32] = "cts";
+    strcat(cts, num);
+    mkfifo(cts,0644);
+    char stc[32] = "stc";
+    strcat(stc, num);
+    mkfifo(stc, 0644);
 
-        //message is contained in textbuffer
-        printf("%s: ",finaluser);
-        scanf("%s",textbuffer);
-        char finmessg[256];
-        char colon[12]=": ";
-        strcpy(finmessg,finaluser);
-        strcat(finmessg,colon);
-        strcat(finmessg,textbuffer);
-        //strcat(finmessg,textbuffer);
+    if (fork() == 0) {
+      while(1) {
+        buffer[256];
+        int toclient = open(stc, O_RDWR);
+        read(toclient, buffer, sizeof(buffer));
+        printf("%s\n",buffer);
+        close(toclient);
+      }
+    } else {
+      while(1) {
+          //message is contained in textbuffer
+          printf("%s: ",finaluser);
+          read(STDIN_FILENO, textbuffer, sizeof(textbuffer) - 1);
+          char finmessg[256];
+          char t1[4] = "[";
+          char t2[4] = "]";
+          char colon[12]=": ";
+          strcpy(finmessg,finaluser);
+          strcat(finmessg, t1);
+          strcat(finmessg, num);
+          strcat(finmessg, t2);
+          strcat(finmessg,colon);
+          strcat(finmessg,textbuffer);
+          //strcat(finmessg,textbuffer);
 
-        int fd2 = open(finaluser,O_WRONLY);
-        write(fd2,finmessg,sizeof(finmessg));
-        close(fd2);
+          int fd2 = open(cts,O_WRONLY);
+          write(fd2,finmessg,sizeof(finmessg));
+          close(fd2);
+      }
     }
+
 
     //2) recieve messages from server which are printed to terminal (accompanied by username that sent message)
     // not sure if we should do the above! lmk -sasha

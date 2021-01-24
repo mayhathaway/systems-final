@@ -16,6 +16,12 @@
 - Messages sent from clients are for now displayed in the main server. Will continue to work on having messages from other senders relayed back to clients
 - Username/Password bug fixes: Added protection against nonexistent usernames, added chat exiting when incorrect password is entered.
 - Should add protection against duplicate usernames + encryption for the namepass.txt file in the future, but it's probably okay if we don't get to it
-- Fixed a bug where the server prints one empty message when a client joins. 
+- Fixed a bug where the server prints one empty message when a client joins.
 - Found a bug where newly created logins provide a weird format on the first usage. Temporarily fixed by forcing relog when a new login is created.
 - Contributor(s): Sasha Wald
+
+### Tues 1/23/21
+- Added multiword functionality to the chat
+- Spent 12+ hours trying to get clients to communicate with each other
+- Updated names of pipes
+- Introduced new pipes for 2 way communication
