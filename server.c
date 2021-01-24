@@ -52,6 +52,7 @@ int main(){
             printf("%s has exited.\n",usernames[i-1]);
         }
         else{
+            char * sep = strtok(message,"\n");
             printf("%s\n",message);
         }
 
