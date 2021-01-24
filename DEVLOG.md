@@ -34,5 +34,6 @@
 
 ### Sunday 1/24/21
 - Added signal handling for user exits and exit messages to server.o
+- Added 'server exit' to shut down the entire chat
 - Found bug where tic tac toe prevents chatting after the game is finished - not sure how to fix this since exec only returns when a program breaks..?
 - Contributor(s): Sasha Wald
