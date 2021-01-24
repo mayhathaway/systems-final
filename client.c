@@ -12,6 +12,7 @@ int main(){
     //0) ask if user has name. if no, create name/password and add to file. if yes, proceed. if name is in login info file and password is correct, log in.
     char buffer[256];
     char finaluser[256];
+    int ttt = 0;
 
     //asking for existing login
     printf("Do you have an existing login? [y/n]: ");
@@ -91,6 +92,7 @@ int main(){
       while(1) {
         buffer[256];
         int toclient = open(stc, O_RDWR);
+        printf("[stc %s]\n",stc );
         read(toclient, buffer, sizeof(buffer));
         printf("%s\n",buffer);
         close(toclient);
@@ -98,23 +100,45 @@ int main(){
     } else {
       while(1) {
           //message is contained in textbuffer
+          int check = 1;
           printf("%s: ",finaluser);
           read(STDIN_FILENO, textbuffer, sizeof(textbuffer) - 1);
-          char finmessg[256];
-          char t1[4] = "[";
-          char t2[4] = "]";
-          char colon[12]=": ";
-          strcpy(finmessg,finaluser);
-          strcat(finmessg, t1);
-          strcat(finmessg, num);
-          strcat(finmessg, t2);
-          strcat(finmessg,colon);
-          strcat(finmessg,textbuffer);
-          //strcat(finmessg,textbuffer);
+          char tttcheck[256];
+          char ttthelp2[16] = "ttt end";
+          strcpy(tttcheck, textbuffer);
+          if (strstr(tttcheck, ttthelp2)) {
+            ttt = 0;
+            check = 0;
+          }
+          if (ttt) {
+            int tttpipe = open("ctg", O_WRONLY);
+            write(tttpipe, textbuffer, sizeof(textbuffer));
+          } else {
+            char finmessg[256];
+            char t1[4] = "[";
+            char t2[4] = "]";
+            char colon[12]=": ";
+            strcpy(finmessg,finaluser);
+            strcat(finmessg, t1);
+            strcat(finmessg, num);
+            strcat(finmessg, t2);
+            strcat(finmessg,colon);
+            strcat(finmessg,textbuffer);
+            //strcat(finmessg,textbuffer);
 
-          int fd2 = open(cts,O_WRONLY);
-          write(fd2,finmessg,sizeof(finmessg));
-          close(fd2);
+            int fd2 = open(cts,O_WRONLY);
+            write(fd2,finmessg,sizeof(finmessg));
+            close(fd2);
+          }
+          if (check){
+            char ttthelp[16] = "ttt ";
+            strcpy(tttcheck, textbuffer);
+            if (strstr(tttcheck, ttthelp)) {
+              mkfifo("ctg", 0644);
+              ttt = 1;
+            }
+          }
+          check = 1;
       }
     }
 

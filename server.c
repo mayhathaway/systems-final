@@ -11,6 +11,7 @@ int main(){
   mkfifo("u_names",0644);
   mkfifo("numtemp",0644);
   int i = 0;
+  int ttt = 0;
   while(1){
     int fd1 = open("u_names",O_RDONLY);
     //supports up to 10 users at once. you can easily change this by adjusting array 'usernames'
@@ -36,6 +37,13 @@ int main(){
         char cts[128] = "cts";
         strcat(cts, num);
         char message[256];
+        char tttcheck[256];
+        char ttthelp[16] = "ttt start";
+        strcpy(tttcheck, message);
+        if (strstr(tttcheck, ttthelp)) {
+            char *args[] = {"./game.o" ,NULL};
+            execvp(args[0], args);
+        }
         int fd2 = open(cts,O_RDWR);
         read(fd2,message,sizeof(message));
         close(fd2);

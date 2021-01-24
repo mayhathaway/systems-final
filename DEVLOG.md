@@ -2,7 +2,7 @@
 
 ---
 
-### Tues 1/19/21
+### Monday 1/19/21
 
 - Added full username and password login support for the chat.
 - An example of how to use the system in current form is visible in the image user_pass.png
@@ -10,7 +10,7 @@
 
 ---
 
-### Tues 1/20/21
+### Tuesday 1/20/21
 
 - Added the initial chat feature: chat supports up to 10 clients which connect by running client.o (server.o should simultaneously be running)
 - Messages sent from clients are for now displayed in the main server. Will continue to work on having messages from other senders relayed back to clients
@@ -20,8 +20,13 @@
 - Found a bug where newly created logins provide a weird format on the first usage. Temporarily fixed by forcing relog when a new login is created.
 - Contributor(s): Sasha Wald
 
-### Tues 1/23/21
+### Saturday 1/23/21
 - Added multiword functionality to the chat
 - Spent 12+ hours trying to get clients to communicate with each other
 - Updated names of pipes
 - Introduced new pipes for 2 way communication
+- Contributor(s): Lei Lin
+
+### Saturday 1/23/21
+- Added tic tac toe through game.c
+- Continued trying to add private messaging but was still unsuccessful

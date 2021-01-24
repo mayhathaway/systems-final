@@ -20,13 +20,7 @@ To connect to the chat, a client process can be ran which will prompt the user t
   - May Hathaway: User signal handling, chatlogs
   - Lei Lin: Games, private messaging
   - Sasha Wald: Creation of chat functionality + username & password system
-- #### Timeline
-  - 1/19: Completion of username and password system as well as chat logs
-  - 1/14: Completion of basic system which allows clients to chat with each other
-  - 1/24: Completion of games + high-score/game progress record
-  - 1/27: Misc: Bug fixing, handling user quits & private messages
-  - (Insert due date here): Project complete
-  
+
 # Chat Server in C
 #### by May Hathaway, Sasha Wald, and Lei Lin (Period 10)
 
@@ -43,6 +37,8 @@ In another terminal, run the command './client.o'
 - This will allow you to create a new user or log in to the chat with an existing user. If you would like another user to log in simultaneously, open a new terminal and run the command './client.o' again.
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
 - Avoid creating users which have the same name as a folder in the same directory as the client.o program (if you have a folder named 'test', do not create a user named 'Test', for example)
+- To start a tictactoe game type "ttt start" in a client
+- To end the game type "ttt end" in a client
 
 When you're finished using a client, type (COMMAND GOES HERE) to exit. The chat server will continue to run.
 If you'd like to shut down this instance of the chat entirely, type (COMAND GOES HERE). This will exit the server and all attached clients.
