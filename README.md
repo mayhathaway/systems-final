@@ -41,4 +41,3 @@ In another terminal, run the command './client.o'
 - To end the game type "ttt end" in a client
 
 When you're finished using a client, type 'exit' to leave the chat. The  server will continue to run.
-If you'd like to shut down this instance of the chat entirely, type 'server exit'. This will exit the server.
