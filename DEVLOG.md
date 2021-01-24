@@ -45,3 +45,9 @@
 - Contributor(s): Sasha Wald
 
 ---
+
+### Sunday 1/24/21
+- Added signal handling for client.c so that it exits with Ctrl+C
+- Added signal handling for server
+- Found a bug: after Ctrl+C, it printed "Thank you for chatting", "may: may: may: may: may: may: may: may: may:"", and then "Thank you for chatting", will figure out why that is.
+- Contributor(s): May Hathaway
