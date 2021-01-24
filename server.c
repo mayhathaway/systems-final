@@ -10,7 +10,6 @@ int main(){
   //0) recieve client message info, with username
   mkfifo("u_names",0644);
   mkfifo("numtemp",0644);
-  mkfifo("exit_pipe",0644);
   int i = 0;
   int ttt = 0;
 
@@ -49,15 +48,8 @@ int main(){
         int fd2 = open(cts,O_RDWR);
         read(fd2,message,sizeof(message));
         close(fd2);
-        if(strncmp("exited",message,4)==0){
+        if(strncmp("exited",message,8)==0){
             printf("%s has exited.\n",usernames[i-1]);
-        }
-        else if(strncmp("server exit",message,11)==0){
-            int exit_pipe_read=open("exit_pipe",O_WRONLY);
-            char exit_mesg[256]="server exit";
-            write(exit_pipe_read,exit_mesg,sizeof(exit_mesg));
-            close(exit_pipe_read);
-            exit(0);
         }
         else{
             printf("%s\n",message);
@@ -76,13 +68,6 @@ int main(){
         //   }
         // }
       }
-    }
-    int exit_pipe = open("exit_pipe",O_RDONLY);
-    char testy[256];
-    read(exit_pipe,testy,sizeof(testy));
-    if(strncmp(testy,"server exit",11)==0){
-        printf("Server is shutting down.");
-        exit(0);
     }
   }
 }
