@@ -111,17 +111,9 @@ int main(){
           int check = 1;
           printf("%s: ",finaluser);
           read(STDIN_FILENO, textbuffer, sizeof(textbuffer) - 1);
-            if(strncmp("exit",textbuffer,4) == 0){
+            if(strncmp("exit",textbuffer,2) == 0){
                 printf("Thank you for chatting\n");
                 char exitmessg[256]="exited";
-                int fd2 = open(cts,O_WRONLY);
-                write(fd2,exitmessg,sizeof(exitmessg));
-                close(fd2);
-                exit(0);
-            }
-            else if(strncmp("server exit",textbuffer,11)==0){
-                printf("The server will shut down\n");
-                char exitmessg[256]="server exit";
                 int fd2 = open(cts,O_WRONLY);
                 write(fd2,exitmessg,sizeof(exitmessg));
                 close(fd2);
