@@ -36,9 +36,9 @@ In one terminal, run the command './server.o'
 In another terminal, run the command './client.o'
 - This will allow you to create a new user or log in to the chat with an existing user. If you would like another user to log in simultaneously, open a new terminal and run the command './client.o' again.
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
-- To exit a specific user, you can type the command 'exit', or use 'ctrl-C'
+
 - To start a tictactoe game type "ttt start" in a client
 - To end the game type "ttt end" in a client
 
-When you're finished using a client, type (COMMAND GOES HERE) to exit. The chat server will continue to run.
+When you're finished using a client, type 'exit' to leave the chat. The  server will continue to run.
 If you'd like to shut down this instance of the chat entirely, type (COMAND GOES HERE). This will exit the server and all attached clients.
