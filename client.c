@@ -8,7 +8,11 @@
 
 static void signal_handler(int sign){
     if (sign == SIGINT){
+        int i = open("signal.out", O_APPEND | O_WRONLY | O_CREAT, 0644);
+        char exit_message[] = "Program exited due to SIGINT\n";
+        write(i, exit_message, strlen(exit_message));
         printf("\nThank you for chatting.\n");
+        close(i);
         exit(0);
     }
 }
