@@ -6,6 +6,13 @@
 #include <unistd.h>
 #include <string.h>
 
+static void signal_handler(int sign){
+    if (sign == SIGINT){
+        printf("\nThank you for chatting.\n");
+        exit(0);
+    }
+}
+
 int main(){
     //NOTE: planning to add duplicate username prevention and some simple encryption to the username/password file if there's time. - sasha (if we don't get to it... it would be a good future addition so let that be noted!)
 
@@ -100,9 +107,18 @@ int main(){
     } else {
       while(1) {
           //message is contained in textbuffer
+        signal(SIGINT,signal_handler);
           int check = 1;
           printf("%s: ",finaluser);
           read(STDIN_FILENO, textbuffer, sizeof(textbuffer) - 1);
+            if(strncmp("exit",textbuffer,2) == 0){
+                printf("Thank you for chatting\n");
+                char exitmessg[256]="exited";
+                int fd2 = open(cts,O_WRONLY);
+                write(fd2,exitmessg,sizeof(exitmessg));
+                close(fd2);
+                exit(0);
+            }
           char tttcheck[256];
           char ttthelp2[16] = "ttt end";
           strcpy(tttcheck, textbuffer);
@@ -125,7 +141,6 @@ int main(){
             strcat(finmessg,colon);
             strcat(finmessg,textbuffer);
             //strcat(finmessg,textbuffer);
-
             int fd2 = open(cts,O_WRONLY);
             write(fd2,finmessg,sizeof(finmessg));
             close(fd2);
