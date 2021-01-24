@@ -20,6 +20,8 @@
 - Found a bug where newly created logins provide a weird format on the first usage. Temporarily fixed by forcing relog when a new login is created.
 - Contributor(s): Sasha Wald
 
+---
+
 ### Saturday 1/23/21
 - Added multiword functionality to the chat
 - Spent 12+ hours trying to get clients to communicate with each other
@@ -27,12 +29,19 @@
 - Introduced new pipes for 2 way communication
 - Contributor(s): Lei Lin
 
+---
+
 ### Saturday 1/23/21
 - Added tic tac toe through game.c
 - Continued trying to add private messaging but was still unsuccessful
 - Contributor(s): Lei Lin
 
+---
+
 ### Sunday 1/24/21
 - Added signal handling for user exits and exit messages to server.o
+- Fixed a bug with old messages being tacked onto new ones after other clients exited
 - Found bug where tic tac toe prevents chatting after the game is finished - not sure how to fix this since exec only returns when a program breaks..?
 - Contributor(s): Sasha Wald
+
+---
