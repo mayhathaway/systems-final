@@ -55,6 +55,7 @@
 ---
 
 ### Sunday 1/24/21
+- Added chatlog functionality w/ timestamps
 - Fixed the "may: may: may: may:" bug, it should now print "Thank you for chatting"
 - Fixed an array name bug that was causing warnings to be given
 - Attempted fix for multiple "thank you" server messages - was able to remove one of them
