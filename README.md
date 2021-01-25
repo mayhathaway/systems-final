@@ -24,7 +24,7 @@ In another terminal, run the command './client.o'
 - Use ctrl-c to exit the chat. The exit will be recorded.
 ---
 ### Accessing Chatlogs
-
+- 
 
 ## Additional Notes/Bugs
 - Record of server exits can be found in server.out
