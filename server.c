@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 
 static void signal_handler(int sign){
     if (sign == SIGINT){
@@ -18,6 +19,13 @@ static void signal_handler(int sign){
 }
 
 int main(){
+  int fd = open("chatlogmain.txt",O_WRONLY | O_CREAT | O_APPEND,0666);
+  char newsession[256]="\nA new session of chat was started\r\n";
+  time_t t;
+  time(&t);
+  write(fd,newsession,strlen(newsession));
+  sprintf(newsession,"Time: %s\n",ctime(&t));
+  write(fd,newsession,strlen(newsession));
 
   //0) recieve client message info, with username
   mkfifo("u_names",0644);
@@ -39,6 +47,9 @@ int main(){
     read(fd1,usernames[i],sizeof(usernames[i]));
     printf("\n");
     printf("User %d has joined the chat: %s\n",i,usernames[i]);
+    char joinmessage[256];
+    sprintf(joinmessage,"User %d has joined the chat: %s\n",i,usernames[i]);
+    write(fd,joinmessage,strlen(joinmessage));
     close(fd1);
 
     i++;
@@ -63,9 +74,17 @@ int main(){
         close(fd2);
         if(strncmp("exited",message,8)==0){
             printf("%s has exited.\n",usernames[i-1]);
+            char filemessage[256];
+            sprintf(filemessage,"%s has exited.\r\n",usernames[i-1]);
+            write(fd,filemessage,strlen(filemessage));
         }
         else{
+          //little bugfix for an error after client exiting
             char * sep = strtok(message,"\n");
+            char filemessage[256];
+            strcpy(filemessage,message);
+            strcat(filemessage,"\r\n");
+            write(fd,filemessage,strlen(filemessage));
             printf("%s\n",message);
         }
 
