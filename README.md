@@ -29,4 +29,5 @@ In another terminal, run the command './client.o'
 ## Additional Notes/Bugs
 - Record of server exits can be found in server.out
 - Avoid creating duplicate usernames
-- There are some formatting errors currently: the server sends two "thank you for chatting" exit messages, and when clients exit their username is printed multiple times.
+- There are some formatting errors currently: the server sends two "thank you for chatting" exit messages
+- After completing a game of tic tac toe, there is a bug where the user is no longer able to chat. They should exit and rejoin the server.
