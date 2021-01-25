@@ -19,7 +19,6 @@ static void signal_handler(int sign){
 
 int main(){
 
-  signal(SIGINT, signal_handler);
   //0) recieve client message info, with username
   mkfifo("u_names",0644);
   mkfifo("numtemp",0644);
@@ -47,6 +46,7 @@ int main(){
     int f = fork();
     if (f == 0){
       while(1){
+        signal(SIGINT, signal_handler);
         sprintf(num, "%d", i - 1);
         char cts[128] = "cts";
         strcat(cts, num);
