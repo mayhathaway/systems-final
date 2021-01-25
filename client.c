@@ -115,7 +115,6 @@ int main(){
           //message is contained in textbuffer
         signal(SIGINT,signal_handler);
           int check = 1;
-          printf("%s: ",finaluser);
           read(STDIN_FILENO, textbuffer, sizeof(textbuffer) - 1);
             if(strncmp("exit",textbuffer,2) == 0){
                 printf("Thank you for chatting\n");
