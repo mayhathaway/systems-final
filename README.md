@@ -4,7 +4,6 @@
 ## A Short Description of Our Project
 We've created a server/client system which allows multiple clients to connect and chat with one another. The chat-room supports some additional features, including reusable username/password logins, signal handling of user exits, a stored record of chat sessions between users, and simple games (namely, tic tac toe) run via a shell program.
 ## How-to
----
 ### Setting up the chat
 To use this chat server, you will need to open multiple terminals. You should start with two!
 Type the command 'make' in each terminal.
