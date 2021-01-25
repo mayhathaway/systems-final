@@ -51,3 +51,10 @@
 - Added signal handling for server
 - Found a bug: after Ctrl+C, it printed "Thank you for chatting", "may: may: may: may: may: may: may: may: may:"", and then "Thank you for chatting", will figure out why that is.
 - Contributor(s): May Hathaway
+
+---
+
+### Sunday 1/24/21
+- Fixed the "may: may: may: may:" bug
+- Minor aesthetic changes
+- Contributor(s): Sasha Wald
