@@ -56,5 +56,6 @@
 
 ### Sunday 1/24/21
 - Fixed the "may: may: may: may:" bug
+- Attempted fix for multiple "thank you" server messages - was able to remove one of them
 - Minor aesthetic changes
 - Contributor(s): Sasha Wald
