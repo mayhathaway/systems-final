@@ -103,11 +103,11 @@ int main(){
 
     if (fork() == 0) {
       while(1) {
-        buffer[256];
+        char buffer2[256];
         int toclient = open(stc, O_RDWR);
         printf("[stc %s]\n",stc );
-        read(toclient, buffer, sizeof(buffer));
-        printf("%s\n",buffer);
+        read(toclient, buffer2, sizeof(buffer2));
+        printf("%s\n",buffer2);
         close(toclient);
       }
     } else {
