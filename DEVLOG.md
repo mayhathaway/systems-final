@@ -56,6 +56,7 @@
 
 ### Sunday 1/24/21
 - Fixed the "may: may: may: may:" bug, it should now print "Thank you for chatting"
+- Fixed an array name bug that was causing warnings to be given
 - Attempted fix for multiple "thank you" server messages - was able to remove one of them
 - Minor aesthetic changes & readme changes
 - Contributor(s): Sasha Wald
