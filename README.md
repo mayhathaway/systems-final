@@ -27,7 +27,8 @@ In another terminal, run the command './client.o'
 - Use ctrl-c to exit the chat. The exit will be recorded.
 ---
 ### Accessing Chatlogs
-- 
+- Each time the server.o program is restarted, a new timestamped entry is added to the file chatlogmain.txt
+- The chatlogs store user entrances/exits and messages sent to the chat. To access this information, you can do 'cat chatlogmain.txt' or access the file directly
 
 ## Additional Notes/Bugs
 - Record of server exits can be found in server.out
