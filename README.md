@@ -14,6 +14,9 @@ In one terminal, run the command './server.o'
 In another terminal, run the command './client.o'
 - This will allow you to create a new user or log in to the chat with an existing user. If you would like another user to log in simultaneously, open a new terminal and run the command './client.o' again.
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
+
+![alt text](https://github.com/mayhathaway/systems-final/blob/main/user_pass.png)
+
 ---
 ### Tic-tac-toe
 - To start a tictactoe game type "ttt start" in a client
