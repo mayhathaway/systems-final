@@ -1,26 +1,3 @@
-# Project Proposal
-#### by May Hathaway, Sasha Wald, and Lei Lin
-
-
-### Project Description:
-We will be working on a server/client system which allows multiple clients to connect and chat with one another. The chat-room will support additional features, including username/password logins , a stored record of chat sessions between users, and simple multiplayer games (namely, tic tac toe & hangman) which store a record of high-scores.
-
-### User Interface Description:
-To connect to the chat, a client process can be ran which will prompt the user to enter an existing login or create a new one. After that, the user can communicate in the chat via the command line, where other messages will also be printed. Commands will be created which enable the user to find old chat sessions or interact with a game.
-
-### Technical Design:
-- #### Use of topics covered in class
-  - Named pipes will be used to send information between chatters and the server
-  - Use pipes to create private messages
-  - We will work with files in order to create chat records and store high scores, and potentially to track game progress
-  - Games can be run on a child process
-  - Signals (ctrl-c) from users will be processed in order to close chatlogs and remove unfinished games
-  - Memory allocation will be used when creating structs that hold username/password information
-- #### Breakdown of work
-  - May Hathaway: User signal handling, chatlogs
-  - Lei Lin: Games, private messaging
-  - Sasha Wald: Creation of chat functionality + username & password system
-
 # Chat Server in C
 #### by May Hathaway, Sasha Wald, and Lei Lin (Period 10)
 
@@ -28,6 +5,7 @@ To connect to the chat, a client process can be ran which will prompt the user t
 We've created a server/client system which allows multiple clients to connect and chat with one another. The chat-room supports some additional features, including reusable username/password logins, signal handling of user exits, a stored record of chat sessions between users, and simple games (namely, tic tac toe) run via a shell program.
 ### How-to
 To use this chat server, you will need to open multiple terminals. You should start with two!
+---
 Type the command 'make' in each terminal.
 
 In one terminal, run the command './server.o'
@@ -36,8 +14,8 @@ In one terminal, run the command './server.o'
 In another terminal, run the command './client.o'
 - This will allow you to create a new user or log in to the chat with an existing user. If you would like another user to log in simultaneously, open a new terminal and run the command './client.o' again.
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
-
+---
 - To start a tictactoe game type "ttt start" in a client
 - To end the game type "ttt end" in a client
-
-When you're finished using a client, type 'exit' to leave the chat. The  server will continue to run.
+---
+- When you're finished using a client, type 'exit' to leave the chat. The  server will continue to run.
