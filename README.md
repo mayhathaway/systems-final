@@ -31,7 +31,7 @@ In another terminal, run the command './client.o'
 - The chatlogs store user entrances/exits and messages sent to the chat. To access this information, you can do 'cat chatlogmain.txt' or access the file directly
 
 ## Additional Notes/Bugs
-- Our project uses forking, fork and exec processes, signals, and pipes.
+- Our project utilizes files, fork and exec processes, signals, and pipes.
 - Record of server exits can be found in server.out
 - Avoid creating duplicate usernames
 - There are some formatting errors currently: the server sends two "thank you for chatting" exit messages
