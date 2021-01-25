@@ -16,7 +16,7 @@ In another terminal, run the command './client.o'
 - To create a new user, enter 'n' for the first question and follow the provided prompts. An example of this process is available under the image 'user_pass.png'
 
 ![alt text](https://github.com/mayhathaway/systems-final/blob/main/user_pass.png)
-
+- After that, you will be able to type in any client program and see that message sent to the main chat in the server program, username and user-id number attached.
 ---
 ### Tic-tac-toe
 - To start a tictactoe game type "ttt start" in a client
